@@ -22,9 +22,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "kevin.dev | Senior Software Developer",
+  title: "Kevin Guifarro | Full-Stack Developer & AI Solutions Engineer",
   description:
-    "Full-stack developer specializing in enterprise systems, business automation, and AI integration. Building software at Fortune 500 scale.",
+    "Full-stack developer specializing in enterprise systems, business automation, and AI integration. Building solutions at Fortune 500 scale.",
   keywords: [
     "software developer",
     "full-stack developer",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Kevin" }],
   openGraph: {
-    title: "kevin.dev | Senior Software Developer",
+    title: "Kevin Guifarro | Full-Stack Developer & AI Solutions Engineer",
     description:
-      "Full-stack developer specializing in enterprise systems, business automation, and AI integration.",
+      "Full-stack developer specializing in enterprise systems, business automation, and AI integration. Building solutions at Fortune 500 scale.",
     url: "https://kevin.dev",
     siteName: "kevin.dev",
     locale: "en_US",
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "kevin.dev | Senior Software Developer",
+    title: "Kevin Guifarro | Full-Stack Developer & AI Solutions Engineer",
     description:
-      "Full-stack developer specializing in enterprise systems, business automation, and AI integration.",
+      "Full-stack developer specializing in enterprise systems, business automation, and AI integration. Building solutions at Fortune 500 scale.",
   },
   robots: {
     index: true,

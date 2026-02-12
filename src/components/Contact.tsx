@@ -7,8 +7,8 @@ import SectionHeader from "./SectionHeader";
 const contactLinks = [
   {
     label: "Email",
-    value: "placeholder@email.com",
-    href: "mailto:placeholder@email.com",
+    value: "kevin@guifarro.dev",
+    href: "mailto:kevin@guifarro.dev",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -18,8 +18,8 @@ const contactLinks = [
   },
   {
     label: "LinkedIn",
-    value: "linkedin.com/in/yourprofile",
-    href: "https://linkedin.com/in/yourprofile",
+    value: "linkedin.com/in/kevinguifarro",
+    href: "https://linkedin.com/in/kevinguifarro",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -54,8 +54,8 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="font-[family-name:var(--font-ibm-plex-sans)] text-lg text-[#666666] leading-relaxed mb-10"
           >
-            Have a project in mind? Looking for a developer who understands
-            enterprise complexity? I&apos;d love to hear from you.
+            Have a tough technical challenge? Looking for a developer who
+            won&apos;t quit until it&apos;s solved? Let&apos;s talk.
           </motion.p>
 
           <div className="flex flex-col gap-4">

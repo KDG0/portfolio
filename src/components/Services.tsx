@@ -61,7 +61,7 @@ const services = [
   {
     title: "Web Development",
     description:
-      "Responsive websites and web applications built with modern standards. From landing pages to full-stack platforms.",
+      "Custom web applications built end-to-end with modern standards. From responsive front-ends to robust back-end architecture.",
     tags: ["JavaScript", "Next.js", "Node.js", "HTML/CSS"],
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -73,7 +73,7 @@ const services = [
   {
     title: "Business Automation",
     description:
-      "Streamline workflows and eliminate repetitive tasks. Custom automation solutions that save time and reduce errors.",
+      "Eliminating manual workflows through custom automation, smart integrations, and Power Automate. Less busywork, more impact.",
     tags: ["N8N", "Power Automate", "APIs", "Integration"],
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

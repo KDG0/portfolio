@@ -34,7 +34,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="font-[family-name:var(--font-jetbrains-mono)] text-sm text-[#E94560] tracking-wider mb-6"
             >
-              Senior Software Developer
+              Full-Stack Developer &amp; AI Solutions Engineer
             </motion.p>
 
             <motion.h1
@@ -43,8 +43,8 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="font-[family-name:var(--font-space-grotesk)] text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
             >
-              Building software at Fortune&nbsp;500 scale.{" "}
-              <span className="text-white/50 italic">Exploring AI frontiers.</span>
+              I solve the problems other developers can&apos;t.{" "}
+              <span className="text-white/50 italic">From enterprise systems to AI.</span>
             </motion.h1>
 
             <motion.p
@@ -53,9 +53,9 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="font-[family-name:var(--font-ibm-plex-sans)] text-lg text-[#666666] leading-relaxed max-w-lg mb-8"
             >
-              Full-stack developer specializing in enterprise systems and business
-              automation. Currently expanding into AI integration and intelligent
-              agents to deliver next-generation solutions.
+              I combine full-stack development, AI, and lateral thinking to build
+              enterprise-grade solutions for the hardest technical challenges. If
+              your team is stuck, I&apos;m the one you call.
             </motion.p>
 
             <motion.div
@@ -85,9 +85,10 @@ export default function Hero() {
               className="flex flex-wrap gap-8 text-sm"
             >
               {[
-                { value: "5+", label: "Years Experience" },
+                { value: "8+", label: "Years Experience" },
                 { value: "Fortune 500", label: "Enterprise Scale" },
                 { value: "Full-Stack", label: "End to End" },
+                { value: "AI/ML", label: "Next Frontier" },
               ].map((stat) => (
                 <div key={stat.label}>
                   <span className="font-[family-name:var(--font-space-grotesk)] text-white font-bold text-lg">

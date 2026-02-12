@@ -9,7 +9,7 @@ const blogPosts = [
     title: "I built my portfolio using Claude Code — here's what I learned",
     description:
       "A developer's honest take on building a production site with AI-assisted coding. The good, the surprising, and what I'd do differently.",
-    date: "2025",
+    date: "2026",
     badge: "Upcoming",
   },
 ];
