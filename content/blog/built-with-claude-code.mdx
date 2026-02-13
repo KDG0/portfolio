@@ -1,0 +1,105 @@
+---
+title: "I Built My Portfolio in 1 Hour Using Claude Code — Here's What I Learned"
+description: "A developer's honest take on building a production site with AI-assisted coding. The good, the surprising, and what I'd do differently."
+date: "2026-02-12"
+tags: ["Claude Code", "AI", "Next.js", "Portfolio"]
+published: true
+---
+
+I've been a developer for 8+ years. I've built enterprise platforms, automated complex workflows, and solved the kind of bugs that make senior engineers quietly close their laptops and go for a walk.
+
+But I didn't have a portfolio site.
+
+Not because I couldn't build one — because there was always something more urgent. Client work, production bugs, the next sprint. The classic developer paradox: we build for everyone except ourselves.
+
+So when I finally decided to do it, I gave myself a constraint: **build it in one session, using Claude Code, and ship it the same day.**
+
+Here's exactly what happened.
+
+---
+
+## The Stack
+
+Before I touched anything, I knew what I wanted: dark mode, clean, fast, and something that actually feels like a developer built it — not a Squarespace template.
+
+The final stack:
+
+- **Next.js** with React and TypeScript
+- **Tailwind CSS** for styling
+- **Framer Motion** for animations
+- **Three.js** for the 3D hero visual
+- **Vercel** for deployment
+
+Not a simple stack. This is a production-grade setup with 3D rendering, page transitions, and responsive design. The kind of thing that would normally take a weekend minimum to scaffold properly.
+
+## Letting Claude Code Drive
+
+Here's where it gets interesting.
+
+I didn't use Claude as a chatbot to ask questions and then code it myself. I used **Claude Code directly** — the CLI tool — and let it build the entire project. I described what I wanted: the layout, the sections, the visual direction, the dark color palette. Claude Code generated the project structure, the components, the styling, the animations. All of it.
+
+My role was more like a creative director than a developer. I gave instructions, reviewed the output, and adjusted course when needed. Claude Code didn't just write code — it understood the *intent* behind my requests and translated that into working components.
+
+The most surprising part? **How accurately it captured my instructions.** I expected to spend significant time correcting misunderstandings or rewriting components. That barely happened. The gap between what I described and what Claude Code produced was remarkably small.
+
+## The Deploy
+
+This is where I expected friction. Setting up Git, connecting to Vercel, configuring the build — these are the boring steps where things usually break.
+
+Claude Code walked me through it. Not in a "here's a tutorial" way, but in a "let me configure this for you" way. Git setup, repository creation, deployment configuration — it guided each step and handled what it could directly.
+
+Within minutes of the code being done, the site was live.
+
+## The Timeline
+
+Let me be honest about the full hour:
+
+- Deciding on the domain and buying it on Cloudflare
+- Claude Code generating the entire project
+- Reviewing and adjusting the output
+- Setting up Git and deploying to Vercel
+- Final checks
+
+**Total: ~1 hour.** From zero to a production portfolio with Next.js, Three.js 3D visuals, Framer Motion animations, and live deployment.
+
+To put that in perspective: scaffolding a Next.js project with TypeScript, configuring Tailwind, setting up Three.js with proper React integration, building responsive components with animations, and deploying — that's easily 8-15 hours of focused work for an experienced developer. Maybe more if you're particular about design.
+
+## What Claude Code Did Well
+
+I'll be specific:
+
+**Project architecture.** It didn't just dump everything in one file. Proper component structure, clean separation of concerns, TypeScript types where they should be.
+
+**Design interpretation.** I described a dark theme with specific accent colors and a clean, minimal feel. What I got back was exactly that — not a generic dark template, but something that felt intentional and cohesive.
+
+**Context retention.** As I gave follow-up instructions ("make the hero section more impactful," "add a services grid," "include a contact section"), Claude Code maintained consistency across the entire project. The design language stayed coherent.
+
+**Deployment guidance.** The transition from code to live site was seamless. It knew the Vercel workflow and guided me through it without unnecessary complexity.
+
+## What I'd Watch For
+
+No tool is perfect, and I want this to be an honest take.
+
+This was a portfolio site — a relatively straightforward project in terms of business logic. I'm curious how Claude Code handles more complex scenarios: heavy state management, API integrations with edge cases, or debugging production issues in existing codebases. That's where I'll test it next.
+
+For now, for this specific use case — building a polished, production-ready portfolio from scratch — it delivered beyond what I expected.
+
+## The Bigger Picture
+
+This experience shifted how I think about development workflows. Not in a "developers are being replaced" way — that's a lazy take. In a **"the bottleneck is moving"** way.
+
+The bottleneck used to be writing code. Now it's shifting toward knowing *what* to build, *how* to describe it clearly, and *when* to adjust course. The skills that matter are becoming more architectural, more strategic, more about taste and judgment.
+
+As a developer who's spent years solving complex enterprise problems, I see Claude Code as a force multiplier. It doesn't replace the thinking — it accelerates the execution. And for someone who values lateral thinking and creative problem-solving over typing speed, that's exactly the right trade.
+
+## Try It Yourself
+
+If you're a developer without a portfolio site (I know you're out there), this is your sign. The barrier to entry just dropped dramatically.
+
+And if you're curious about the result: you're looking at it. This site — **guifarro.dev** — is what came out of that one-hour session.
+
+---
+
+*Kevin Guifarro is a Full-Stack Developer & AI Solutions Engineer with 8+ years of enterprise experience at 3M. He specializes in solving complex technical problems that other developers can't. Currently exploring AI engineering and building tools that make teams more effective.*
+
+*Have a tough technical challenge? [Let's talk.](/contact)*
