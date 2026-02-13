@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm)",
+      "Bash(npx create-next-app:*)",
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(xcopy:*)",
+      "Bash(robocopy:*)",
+      "Bash(dir:*)",
+      "Bash(npm install:*)",
+      "Bash(npx next build)",
+      "Bash(git status:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: personal portfolio site\n\nNext.js 14+ with App Router, TypeScript, Tailwind CSS, Three.js \\(R3F\\),\nand Framer Motion. Features interactive 3D hero scene with geometric\nwireframe meshes and particle system, smooth scroll animations,\nresponsive navigation with mobile menu, services grid, project/blog\ncard components, and contact section. Dark theme with custom brand\ncolors \\(#1A1A2E, #E94560, #0F3460\\).\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(npm run dev:*)",
+      "Bash(git commit:*)",
+      "Bash(gh auth status:*)",
+      "Bash(where:*)",
+      "Bash(choco install:*)",
+      "Bash(winget install:*)",
+      "Bash(ssh:*)",
+      "Bash(curl:*)",
+      "Bash(git credential-manager:*)",
+      "Bash(git credential fill:*)",
+      "Bash(npx:*)",
+      "Bash(unzip:*)",
+      "Bash(/c/Users/Kevin/bin/gh.exe auth status:*)",
+      "Bash(/c/Users/Kevin/bin/gh.exe auth login:*)",
+      "Bash(/c/Users/Kevin/bin/gh.exe repo create:*)",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)"
+    ]
+  }
+}
