@@ -1,0 +1,147 @@
+---
+title: "How I Built an AI Chatbot for a Restaurant in 48 Hours"
+description: "A real breakdown of building a production-ready AI chatbot for a restaurant — the stack, the challenges, and what clients actually care about."
+date: "2026-02-21"
+tags: ["AI", "Chatbots", "Claude API", "Next.js"]
+published: true
+---
+
+A restaurant owner reached out to me with a simple request: "We need something on our website that can answer customer questions — hours, menu, reservations, that kind of thing."
+
+No chatbot experience on their end. No technical spec. Just a clear business problem: their staff was spending too much time answering the same questions over the phone, and their website wasn't picking up the slack.
+
+I told them I could have a working demo in 48 hours. Here's exactly how that went.
+
+---
+
+## The Brief
+
+The requirements were refreshingly straightforward:
+
+- Answer questions about hours, location, and parking
+- Walk customers through the menu (including dietary restrictions and allergens)
+- Handle reservation inquiries (redirect to their booking system)
+- Match the restaurant's brand voice — warm, helpful, not robotic
+- Work on mobile (most of their traffic is mobile)
+
+No complex integrations. No multi-language support. No inventory management. Just a focused, useful chatbot that solves a real problem.
+
+This is the kind of project I love — small enough to ship fast, impactful enough to matter.
+
+## The Stack
+
+I went with what I know and what ships fast:
+
+- **Next.js** for the frontend and API routes
+- **Claude API** with streaming for the chat backend
+- **Tailwind CSS** for styling the widget
+- **Vercel** for deployment
+
+No LangChain. No vector database. No Pinecone. I'll explain why in a minute.
+
+## The RAG Decision (Or Lack Thereof)
+
+Here's where most developers would reach for a full RAG pipeline. Embed the menu in a vector store, set up semantic search, build a retrieval chain. It's the "correct" architecture for a knowledge-grounded chatbot.
+
+But I looked at the actual data:
+
+- A menu with about 40 items
+- Business hours (including holiday variations)
+- One location with parking info
+- A reservation link
+- A few paragraphs about the restaurant's story
+
+**That's maybe 3,000 tokens of structured information.** It fits comfortably in a system prompt.
+
+So instead of building a RAG pipeline, I structured the restaurant's information as clean, organized text in the system prompt. Menu items grouped by category, hours formatted clearly, location details with landmarks. I gave Claude specific instructions about tone, when to suggest the reservation link, and how to handle questions outside its scope.
+
+This isn't a shortcut — it's the right engineering decision for this scale. RAG adds latency, complexity, and cost. When your entire knowledge base fits in a system prompt with room to spare, a vector database is overhead you don't need.
+
+**The rule I follow: don't add infrastructure until the problem demands it.**
+
+## Building the Chat Widget
+
+I built the chatbot as a floating widget component — the kind that sits in the bottom-right corner and expands when clicked. The goal was to make it reusable, so I could drop it into any client's site with minimal configuration.
+
+The component structure:
+
+- **ChatWidget** — the main container, handles open/close state and positioning
+- **ChatWindow** — the message list, input field, and send button
+- **ChatMessage** — individual message bubbles with typing indicators
+- **useChatStream** — a custom hook that manages the streaming connection
+
+I kept the styling configurable through props: primary color, bot name, welcome message, position. The restaurant got their brand colors and a friendly greeting. The next client gets theirs. Same component, different config.
+
+The one thing I spent extra time on was the mobile experience. A floating widget that works on desktop can be unusable on mobile if you're not careful. On smaller screens, the chat expands to nearly full-screen, the input stays above the keyboard, and the close button is easy to reach. Small details, but they're the difference between a widget people use and one they dismiss immediately.
+
+## The Streaming Implementation
+
+This was non-negotiable. Streaming responses — where the text appears word by word instead of all at once — is a massive UX improvement for chatbots.
+
+Here's why it matters:
+
+**Perceived speed.** A response that starts appearing in 200ms and takes 3 seconds to complete *feels* faster than a response that appears all at once after 3 seconds. Users start reading immediately. They're engaged, not waiting.
+
+**Feedback loop.** Users can see the response forming. If they asked the wrong question, they know quickly. If the answer is going in the right direction, they relax. That real-time feedback reduces anxiety and builds trust.
+
+The implementation uses the Claude API's streaming mode through a Next.js API route. The frontend consumes the stream with an EventSource-like pattern, appending tokens to the message as they arrive. It handles connection drops, displays a typing indicator before the first token arrives, and smoothly transitions to the complete message.
+
+Nothing exotic technically, but the user experience difference between streaming and non-streaming is night and day. Every chatbot I build ships with streaming. No exceptions.
+
+## What Surprised Me
+
+**Clients don't care about the tech stack.** Not even a little. The restaurant owner never asked what model I was using, what framework the frontend was built with, or how the streaming worked. They cared about three things:
+
+1. **Does it answer correctly?** They tested it by asking about their own menu items and hours. When it got everything right, they were satisfied.
+2. **Is it fast?** The streaming response made this a non-issue. First tokens appeared almost instantly.
+3. **Does it sound like us?** This was the most important one. They wanted the chatbot to feel like a friendly host, not a corporate FAQ bot. We spent more time tuning the system prompt's personality than anything technical.
+
+That last point is worth emphasizing. **The personality tuning took longer than the code.** Getting the tone right — warm but not cheesy, helpful but not pushy, knowledgeable but not lecturing — required multiple rounds of testing with the actual restaurant staff. They'd say things like "we'd never say 'I apologize for the inconvenience,' we'd say 'sorry about that!'" and I'd adjust the prompt accordingly.
+
+This is the part of AI chatbot development that engineering blogs skip over. The code is the easy part. The voice is the craft.
+
+## The 48-Hour Breakdown
+
+**Hours 1-4:** Discovery call, gathering restaurant info, structuring the knowledge base, writing the initial system prompt.
+
+**Hours 5-12:** Building the chat widget component, API route, streaming implementation, and basic styling.
+
+**Hours 13-20:** Mobile optimization, error handling, edge cases (what happens when someone asks about a competitor? when they type gibberish? when they get aggressive?).
+
+**Hours 21-30:** Personality tuning sessions with the client. Testing, adjusting the prompt, testing again.
+
+**Hours 31-40:** Final styling pass, brand integration, deployment, and documentation.
+
+**Hours 41-48:** Client walkthrough, minor adjustments, handoff.
+
+That's not 48 consecutive hours — it was spread over a few days. But the total working time was under 48 hours from kickoff to deployed product.
+
+## The Result
+
+The restaurant now has a chatbot on their website that:
+
+- Answers menu questions accurately, including allergen information
+- Provides hours and location with context ("We're right next to..." style directions)
+- Directs reservation requests to their booking system with a direct link
+- Handles off-topic questions gracefully ("I'm here to help with our restaurant — for other questions, you might want to try Google!")
+- Sounds like their brand, not like a generic AI assistant
+
+The widget is a reusable component I can now deploy for any small business. Different data, different personality, same architecture.
+
+## The Takeaway
+
+AI chatbots for small businesses don't need to be complex. They need to be **reliable, fast, and on-brand.**
+
+The temptation in this space is to over-engineer. To reach for vector databases when a system prompt will do. To build elaborate chains when a single API call handles it. To obsess over the architecture when the client is obsessing over whether the bot sounds friendly enough.
+
+Start simple. Ship fast. Measure what actually matters to the client. Then add complexity only when the problem demands it.
+
+That 3,000-token system prompt is handling real customer questions every day. No vector store. No fine-tuning. No elaborate retrieval chain. Just a well-crafted prompt, a clean streaming implementation, and a lot of attention to personality.
+
+Sometimes the best engineering is knowing what *not* to build.
+
+---
+
+*Kevin Guifarro is a Full-Stack Developer & AI Solutions Engineer with 8+ years of enterprise experience at 3M. He builds AI-powered tools for businesses that need practical solutions, not science projects.*
+
+*Need a chatbot for your business? [Let's talk.](/contact)*
