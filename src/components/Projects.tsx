@@ -46,6 +46,15 @@ const projects = [
     liveUrl: "https://ember-and-oak-landing.vercel.app/",
     githubUrl: "https://github.com/KDG0/ember-and-oak-landing",
   },
+  {
+    title: "La Mesa Dorada — Latin Restaurant",
+    description:
+      "Modern Latin restaurant website with a luxury dark-mode aesthetic, warm gold accents, interactive menu showcase with pricing, reservation flow, and an AI-powered chat widget built with the Claude API for answering customer questions in real time.",
+    tags: ["Next.js 14", "Claude API", "Tailwind CSS"],
+    liveUrl: "https://la-mesa-dorada.vercel.app/",
+    githubUrl: "https://github.com/KDG0/La-Mesa-Dorada",
+    badge: "AI",
+  },
 ];
 
 export default function Projects() {
