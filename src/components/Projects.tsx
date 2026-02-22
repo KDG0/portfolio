@@ -33,10 +33,11 @@ const projects = [
   {
     title: "Iron & Ink — Tattoo Studio",
     description:
-      "Premium tattoo studio landing page featuring dark mode elegance with gold accents, scroll reveal animations, responsive design, and a full booking flow. Built with zero frameworks — pure HTML/CSS/JS.",
-    tags: ["HTML", "CSS", "JavaScript"],
+      "AI-powered chatbot for Iron & Ink Tattoo Studio built with a RAG (Retrieval-Augmented Generation) architecture. Answers customer questions about services, pricing, artists, hours, and booking — all powered by real business data. Embedded as a floating chat widget with custom dark-theme styling.",
+    tags: ["N8N", "Claude API", "OpenAI Embeddings", "RAG Pipeline"],
     liveUrl: "https://iron-and-ink-landing.vercel.app/",
     githubUrl: "https://github.com/KDG0/iron-and-ink-landing",
+    badge: "AI",
   },
   {
     title: "Ember & Oak — Restaurant",
