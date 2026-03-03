@@ -22,35 +22,35 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kevin Guifarro | Full-Stack Developer & AI Solutions Engineer",
+  title: "Guifarro Dev | AI Chatbots, Automation & Web Development for Small Business",
   description:
-    "Full-stack developer specializing in enterprise systems, business automation, and AI integration. Building solutions at Fortune 500 scale.",
+    "I help small businesses save time and serve customers 24/7 with custom AI chatbots, workflow automation, and modern websites. 8+ years of Fortune 500 experience.",
   keywords: [
-    "software developer",
-    "full-stack developer",
-    "enterprise systems",
-    "business automation",
-    "AI integration",
+    "AI chatbots",
+    "small business automation",
+    "AI developer",
+    "custom chatbot",
+    "workflow automation",
     "web development",
     "Next.js",
-    "React",
-    "TypeScript",
+    "Costa Rica developer",
+    "business automation",
   ],
-  authors: [{ name: "Kevin" }],
+  authors: [{ name: "Kevin Guifarro" }],
   openGraph: {
-    title: "Kevin Guifarro | Full-Stack Developer & AI Solutions Engineer",
+    title: "Guifarro Dev | AI Chatbots, Automation & Web Development",
     description:
-      "Full-stack developer specializing in enterprise systems, business automation, and AI integration. Building solutions at Fortune 500 scale.",
-    url: "https://kevin.dev",
-    siteName: "kevin.dev",
+      "I help small businesses save time and serve customers 24/7 with custom AI chatbots, workflow automation, and modern websites.",
+    url: "https://guifarro.dev",
+    siteName: "guifarro.dev",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kevin Guifarro | Full-Stack Developer & AI Solutions Engineer",
+    title: "Guifarro Dev | AI Chatbots, Automation & Web Development",
     description:
-      "Full-stack developer specializing in enterprise systems, business automation, and AI integration. Building solutions at Fortune 500 scale.",
+      "I help small businesses save time and serve customers 24/7 with custom AI chatbots, workflow automation, and modern websites.",
   },
   robots: {
     index: true,

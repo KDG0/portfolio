@@ -9,11 +9,10 @@ interface ServiceCardProps {
   description: string;
   tags: string[];
   icon: React.ReactNode;
-  comingSoon?: boolean;
   index: number;
 }
 
-function ServiceCard({ title, description, tags, icon, comingSoon, index }: ServiceCardProps) {
+function ServiceCard({ title, description, tags, icon, index }: ServiceCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -26,12 +25,6 @@ function ServiceCard({ title, description, tags, icon, comingSoon, index }: Serv
       <div className="absolute inset-0 rounded-xl bg-[#E94560]/0 group-hover:bg-[#E94560]/[0.02] transition-all duration-300" />
 
       <div className="relative z-10">
-        {comingSoon && (
-          <span className="inline-block px-2.5 py-1 text-xs font-medium font-[family-name:var(--font-jetbrains-mono)] bg-[#E94560]/10 text-[#E94560] rounded-full border border-[#E94560]/20 mb-4">
-            Coming Soon
-          </span>
-        )}
-
         <div className="text-[#E94560] mb-4 text-2xl">{icon}</div>
 
         <h3 className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold text-white mb-3">
@@ -59,22 +52,24 @@ function ServiceCard({ title, description, tags, icon, comingSoon, index }: Serv
 
 const services = [
   {
-    title: "Web Development",
+    title: "AI Chatbots & Assistants",
     description:
-      "Custom web applications built end-to-end with modern standards. From responsive front-ends to robust back-end architecture.",
-    tags: ["JavaScript", "Next.js", "Node.js", "HTML/CSS"],
+      "An AI assistant that knows your business inside out \u2014 your services, your prices, your hours, your policies \u2014 and answers customer questions 24/7. No more missed leads at midnight. Your chatbot learns from YOUR business data, handles inquiries, guides customers toward booking, and sounds like part of your team \u2014 not a robot.",
+    tags: ["AI-Powered", "Trained on Your Data", "24/7", "Custom-Built"],
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="16 18 22 12 16 6" />
-        <polyline points="8 6 2 12 8 18" />
+        <path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.57-3.25 3.92L12 22" />
+        <path d="M12 2a4 4 0 0 0-4 4c0 1.95 1.4 3.57 3.25 3.92" />
+        <path d="M16 16h3a2 2 0 0 1 0 4h-3" />
+        <path d="M8 16H5a2 2 0 0 0 0 4h3" />
       </svg>
     ),
   },
   {
-    title: "Business Automation",
+    title: "Workflow Automation",
     description:
-      "Eliminating manual workflows through custom automation, smart integrations, and Power Automate. Less busywork, more impact.",
-    tags: ["N8N", "Power Automate", "APIs", "Integration"],
+      "Those repetitive tasks eating your week? The copy-pasting between apps, the manual follow-ups, the data entry nobody wants to do \u2014 I build systems that handle all of that automatically. Connect your tools, automate your processes, and get hours back every week.",
+    tags: ["Saves 10+ Hours/Week", "Connects Your Tools", "Runs While You Sleep"],
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2L2 7l10 5 10-5-10-5z" />
@@ -84,10 +79,22 @@ const services = [
     ),
   },
   {
-    title: "Power Platform",
+    title: "Websites & Web Apps",
     description:
-      "Enterprise solutions using Microsoft's Power Platform ecosystem. Apps, flows, and dashboards tailored to your business.",
-    tags: ["Power Apps", "Power Automate", "Dataverse", "SharePoint"],
+      "Fast, modern, mobile-ready websites built to convert visitors into customers. Not a template \u2014 a custom site designed for YOUR business, with the features you actually need. Everything is built with the same technology used by companies like Netflix and Airbnb.",
+    tags: ["Mobile-Ready", "Fast Loading", "Custom-Built", "Modern Tech"],
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="16 18 22 12 16 6" />
+        <polyline points="8 6 2 12 8 18" />
+      </svg>
+    ),
+  },
+  {
+    title: "Power Platform Solutions",
+    description:
+      "Already using Microsoft tools? I build custom apps, automated workflows, and dashboards using Microsoft\u2019s Power Platform \u2014 designed to fit into the systems your team already knows. Perfect for businesses that run on Microsoft 365.",
+    tags: ["Power Apps", "Power Automate", "Dashboards", "Microsoft 365"],
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
@@ -96,28 +103,13 @@ const services = [
       </svg>
     ),
   },
-  {
-    title: "AI Integration",
-    description:
-      "Enhance your products and workflows with intelligent AI capabilities. From chatbots to RAG-powered knowledge systems.",
-    tags: ["Claude API", "RAG", "AI Agents", "LLMs"],
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.57-3.25 3.92L12 22" />
-        <path d="M12 2a4 4 0 0 0-4 4c0 1.95 1.4 3.57 3.25 3.92" />
-        <path d="M16 16h3a2 2 0 0 1 0 4h-3" />
-        <path d="M8 16H5a2 2 0 0 0 0 4h3" />
-      </svg>
-    ),
-    comingSoon: true,
-  },
 ];
 
 export default function Services() {
   return (
     <SectionWrapper id="services">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <SectionHeader label="Services" heading="What I can build for you." />
+        <SectionHeader label="Services" heading="What I build for businesses like yours." />
 
         <div className="grid md:grid-cols-2 gap-6">
           {services.map((service, index) => (

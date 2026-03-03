@@ -9,7 +9,7 @@ export default function Blog() {
   return (
     <SectionWrapper id="blog">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <SectionHeader label="Blog" heading="Thoughts & learnings." />
+        <SectionHeader label="Blog" heading="Insights on AI, automation, and building smarter businesses." />
 
         <div className="grid md:grid-cols-2 gap-6 max-w-2xl">
           {posts.map((post) => (

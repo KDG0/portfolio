@@ -21,7 +21,7 @@ export default function Hero() {
 
   return (
     <section
-      id="about"
+      id="hero"
       className="relative min-h-screen flex items-center overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
@@ -34,7 +34,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="font-[family-name:var(--font-jetbrains-mono)] text-sm text-[#E94560] tracking-wider mb-6"
             >
-              Full-Stack Developer &amp; AI Solutions Engineer
+              AI Developer &mdash; Based in Costa Rica &#127464;&#127479; &mdash; USA Timezone
             </motion.p>
 
             <motion.h1
@@ -43,8 +43,8 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="font-[family-name:var(--font-space-grotesk)] text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
             >
-              I solve the problems other developers can&apos;t.{" "}
-              <span className="text-white/50 italic">From enterprise systems to AI.</span>
+              Your customers have questions at 2am.{" "}
+              <span className="text-white/50 italic">I build the AI that answers them.</span>
             </motion.h1>
 
             <motion.p
@@ -53,9 +53,10 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="font-[family-name:var(--font-ibm-plex-sans)] text-lg text-[#666666] leading-relaxed max-w-lg mb-8"
             >
-              I combine full-stack development, AI, and lateral thinking to build
-              enterprise-grade solutions for the hardest technical challenges. If
-              your team is stuck, I&apos;m the one you call.
+              I help small businesses save time and serve customers around the
+              clock with custom AI chatbots, workflow automation, and modern
+              websites &mdash; built by a developer with 8+ years of Fortune 500
+              experience.
             </motion.p>
 
             <motion.div
@@ -68,13 +69,13 @@ export default function Hero() {
                 onClick={() => handleScrollTo("contact")}
                 className="px-6 py-3 bg-[#E94560] text-white font-medium rounded-lg hover:bg-[#E94560]/90 transition-all duration-200 hover:shadow-lg hover:shadow-[#E94560]/25"
               >
-                Get in touch &rarr;
+                Book a Free Strategy Call &rarr;
               </button>
               <button
-                onClick={() => handleScrollTo("services")}
+                onClick={() => handleScrollTo("work")}
                 className="px-6 py-3 border border-white/20 text-white font-medium rounded-lg hover:border-[#E94560]/50 hover:text-[#E94560] transition-all duration-200"
               >
-                View services
+                See My Work &darr;
               </button>
             </motion.div>
 
@@ -86,9 +87,9 @@ export default function Hero() {
             >
               {[
                 { value: "8+", label: "Years Experience" },
-                { value: "Fortune 500", label: "Enterprise Scale" },
-                { value: "Full-Stack", label: "End to End" },
-                { value: "AI/ML", label: "Next Frontier" },
+                { value: "Fortune 500", label: "Trained" },
+                { value: "AI-Powered", label: "Solutions" },
+                { value: "USA", label: "Timezone" },
               ].map((stat) => (
                 <div key={stat.label}>
                   <span className="font-[family-name:var(--font-space-grotesk)] text-white font-bold text-lg">

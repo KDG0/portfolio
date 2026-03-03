@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { href: "#about", label: "About" },
   { href: "#services", label: "Services" },
-  { href: "#projects", label: "Projects" },
+  { href: "#work", label: "Work" },
+  { href: "#about", label: "About" },
   { href: "#blog", label: "Blog" },
   { href: "#contact", label: "Contact" },
 ];
@@ -68,7 +68,7 @@ export default function Navigation() {
             }}
             className="font-[family-name:var(--font-jetbrains-mono)] text-lg font-bold text-white hover:text-[#E94560] transition-colors"
           >
-            kevin<span className="text-[#E94560]">.</span>dev
+            guifarro<span className="text-[#E94560]">.</span>dev
           </a>
 
           {/* Desktop Nav */}
@@ -87,6 +87,13 @@ export default function Navigation() {
                 {link.label}
               </a>
             ))}
+            <a
+              href="#contact"
+              onClick={(e) => handleNavClick(e, "#contact")}
+              className="ml-2 px-5 py-2.5 bg-[#E94560] text-white text-sm font-medium rounded-lg hover:bg-[#E94560]/90 transition-all duration-200 hover:shadow-lg hover:shadow-[#E94560]/25"
+            >
+              Book a Call &rarr;
+            </a>
           </div>
 
           {/* Mobile Hamburger */}
@@ -137,6 +144,13 @@ export default function Navigation() {
                   {link.label}
                 </a>
               ))}
+              <a
+                href="#contact"
+                onClick={(e) => handleNavClick(e, "#contact")}
+                className="mt-2 px-5 py-2.5 bg-[#E94560] text-white text-sm font-medium rounded-lg text-center hover:bg-[#E94560]/90 transition-all duration-200"
+              >
+                Book a Call &rarr;
+              </a>
             </div>
           </motion.div>
         )}
