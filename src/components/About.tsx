@@ -23,7 +23,7 @@ export default function About() {
             className="relative"
           >
             <img
-              src="/images/kevin.webp"
+              src="/images/projects/me.jpeg"
               alt="Kevin Guifarro — AI Developer based in Costa Rica"
               className="w-full rounded-xl border border-card-border object-cover"
               loading="lazy"
