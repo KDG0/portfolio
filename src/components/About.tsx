@@ -22,12 +22,12 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            {/* Photo placeholder */}
-            <div className="aspect-square rounded-2xl border border-card-border bg-card-bg flex items-center justify-center overflow-hidden">
-              <span className="text-muted text-sm font-[family-name:var(--font-jetbrains-mono)]">
-                Photo placeholder
-              </span>
-            </div>
+            <img
+              src="/images/kevin.webp"
+              alt="Kevin Guifarro — AI Developer based in Costa Rica"
+              className="w-full rounded-xl border border-card-border object-cover"
+              loading="lazy"
+            />
             {/* Decorative glow */}
             <div className="absolute -inset-4 -z-10 bg-accent/5 blur-[60px] rounded-full" />
           </motion.div>

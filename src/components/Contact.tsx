@@ -1,23 +1,16 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import SectionHeader from "./SectionHeader";
 
-const contactLinks = [
-  {
-    label: "Book a Call",
-    value: "Free 30-minute strategy session",
-    href: "https://calendly.com/guifarro-dev", // TODO: Replace with real Calendly URL
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-        <line x1="16" y1="2" x2="16" y2="6" />
-        <line x1="8" y1="2" x2="8" y2="6" />
-        <line x1="3" y1="10" x2="21" y2="10" />
-      </svg>
-    ),
-  },
+// TODO: Replace with real Calendly URL
+const CALENDLY_BASE_URL = "https://calendly.com/YOUR-LINK";
+
+const CALENDLY_DARK_PARAMS = "?background_color=1A1A2E&text_color=E0E0E0&primary_color=E94560";
+
+const alternativeLinks = [
   {
     label: "Email",
     value: "kevin@guifarro.dev",
@@ -52,24 +45,60 @@ const contactLinks = [
 ];
 
 export default function Contact() {
+  const [calendlyUrl, setCalendlyUrl] = useState(CALENDLY_BASE_URL);
+
+  useEffect(() => {
+    const isDark = document.documentElement.dataset.theme === "dark";
+    setCalendlyUrl(isDark ? CALENDLY_BASE_URL + CALENDLY_DARK_PARAMS : CALENDLY_BASE_URL);
+  }, []);
+
   return (
     <SectionWrapper id="contact">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <SectionHeader label="Get in Touch" heading="Let&apos;s work together." />
 
-        <div className="max-w-2xl">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-[family-name:var(--font-ibm-plex-sans)] text-lg text-muted leading-relaxed mb-10"
-          >
-            Have a question? Want to explore what AI can do for your business? I&apos;d love to hear from you.
-          </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="font-[family-name:var(--font-ibm-plex-sans)] text-lg text-muted leading-relaxed mb-10 max-w-2xl"
+        >
+          Have a question? Want to explore what AI can do for your business? I&apos;d love to hear from you.
+        </motion.p>
 
+        {/* Calendly embed */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-10"
+        >
+          <p className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold text-heading mb-4">
+            Book a Call
+          </p>
+          <iframe
+            src={calendlyUrl}
+            loading="lazy"
+            title="Book a free strategy call with Kevin Guifarro"
+            className="w-full min-h-[600px] rounded-xl border border-card-border"
+            frameBorder="0"
+          />
+        </motion.div>
+
+        {/* Alternative contact methods */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <p className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-muted uppercase tracking-wider mb-4">
+            Other ways to reach me
+          </p>
           <div className="flex flex-col gap-4">
-            {contactLinks.map((link, index) => (
+            {alternativeLinks.map((link, index) => (
               <motion.a
                 key={link.label}
                 href={link.href}
@@ -78,7 +107,7 @@ export default function Contact() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
+                transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                 className="group flex items-center gap-4 p-4 rounded-lg border border-card-border hover:border-accent/30 bg-card-bg hover:bg-card-hover-bg transition-all duration-300 w-fit min-w-[300px]"
               >
                 <span className="text-muted group-hover:text-accent transition-colors">
@@ -95,7 +124,7 @@ export default function Contact() {
               </motion.a>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </SectionWrapper>
   );

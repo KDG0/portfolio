@@ -9,7 +9,7 @@ export default function FinalCTA() {
   };
 
   return (
-    <section className="py-20 lg:py-32 relative overflow-hidden">
+    <section className="py-16 lg:py-20 relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-accent/10 to-accent/5" />
 

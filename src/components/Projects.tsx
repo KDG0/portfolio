@@ -14,6 +14,8 @@ const featuredProjects = [
     liveUrl: "https://iron-and-ink-landing.vercel.app/",
     githubUrl: "https://github.com/KDG0/iron-and-ink-landing",
     badge: "AI",
+    resultLine: "Customers get instant answers about pricing, artists, and booking \u2014 24/7. No more lost leads from unanswered DMs.",
+    metricBadges: ["24/7 availability", "Handles booking inquiries automatically", "Trained on real business data"],
   },
   {
     title: "La Mesa Dorada \u2014 AI-Powered Restaurant Website",
@@ -23,6 +25,8 @@ const featuredProjects = [
     liveUrl: "https://la-mesa-dorada.vercel.app/",
     githubUrl: "https://github.com/KDG0/La-Mesa-Dorada",
     badge: "AI",
+    resultLine: "Bilingual AI assistant answers menu questions, takes reservation info, and handles hours/pricing in English and Spanish \u2014 around the clock.",
+    metricBadges: ["Bilingual (EN/ES)", "24/7 virtual host", "Zero missed customer questions"],
   },
   {
     title: "CopyForge \u2014 AI Content Generator",
@@ -32,6 +36,8 @@ const featuredProjects = [
     liveUrl: "https://copyforge-one.vercel.app/",
     githubUrl: "https://github.com/KDG0/copyforge",
     badge: "AI",
+    resultLine: "Business owners create professional emails, social posts, and product descriptions in seconds \u2014 no copywriter needed.",
+    metricBadges: ["Content in seconds", "Multiple formats", "Built for non-writers"],
   },
 ];
 
@@ -40,7 +46,7 @@ const landingPages = [
     title: "Nova Digital \u2014 Marketing Agency Landing Page",
     description:
       "Professional agency website with animated dashboards, case studies with before/after metrics, and a visual process timeline.",
-    tags: ["Next.js 14", "App Router", "Tailwind CSS"],
+    tags: ["Conversion-Focused", "Mobile-Ready", "Modern Design"],
     liveUrl: "https://nova-digital-landing.vercel.app/",
     githubUrl: "https://github.com/KDG0/nova-digital-landing",
   },
@@ -48,7 +54,7 @@ const landingPages = [
     title: "Apex Fitness \u2014 Gym Landing Page",
     description:
       "High-energy gym website with animated counters, bold design, and conversion-focused layout.",
-    tags: ["React", "Vite", "Tailwind CSS"],
+    tags: ["High-Energy Design", "Fast Loading", "Mobile-First"],
     liveUrl: "https://apex-fitness-landing.vercel.app/",
     githubUrl: "https://github.com/KDG0/apex-fitness-landing",
   },
@@ -56,13 +62,19 @@ const landingPages = [
     title: "Ember & Oak \u2014 Restaurant Landing Page",
     description:
       "Warm, inviting restaurant site with organic aesthetics, menu showcase, and reservation flow.",
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: ["Custom Design", "Menu Showcase", "Reservation-Ready"],
     liveUrl: "https://ember-and-oak-landing.vercel.app/",
     githubUrl: "https://github.com/KDG0/ember-and-oak-landing",
   },
 ];
 
 export default function Projects() {
+  const handleScrollToContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const el = document.getElementById("contact");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <SectionWrapper id="work">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -91,6 +103,29 @@ export default function Projects() {
             <ProjectCard key={project.title} {...project} index={index} variant="compact" />
           ))}
         </div>
+
+        {/* Post-work CTA block */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-12 p-8 rounded-xl border border-card-border bg-card-bg text-center"
+        >
+          <p className="font-[family-name:var(--font-space-grotesk)] text-2xl font-bold text-heading mb-2">
+            Like what you see?
+          </p>
+          <p className="font-[family-name:var(--font-ibm-plex-sans)] text-muted mb-6">
+            Every project starts with a free strategy call &mdash; no pressure, no jargon.
+          </p>
+          <a
+            href="#contact"
+            onClick={handleScrollToContact}
+            className="inline-block px-6 py-3 bg-accent text-white font-medium font-[family-name:var(--font-space-grotesk)] rounded-lg hover:bg-accent/90 transition-all duration-200 hover:shadow-lg hover:shadow-accent/25"
+          >
+            Book a Free Strategy Call &rarr;
+          </a>
+        </motion.div>
       </div>
     </SectionWrapper>
   );
