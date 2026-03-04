@@ -19,19 +19,19 @@ function ServiceCard({ title, description, tags, icon, index }: ServiceCardProps
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative p-6 lg:p-8 rounded-xl border border-white/5 bg-white/[0.02] hover:border-[#E94560]/30 transition-all duration-300 hover:bg-white/[0.04]"
+      className="group relative p-6 lg:p-8 rounded-xl border border-card-border bg-card-bg hover:border-accent/30 transition-all duration-300 hover:bg-card-hover-bg"
     >
       {/* Glow effect on hover */}
-      <div className="absolute inset-0 rounded-xl bg-[#E94560]/0 group-hover:bg-[#E94560]/[0.02] transition-all duration-300" />
+      <div className="absolute inset-0 rounded-xl bg-accent/0 group-hover:bg-accent/[0.02] transition-all duration-300" />
 
       <div className="relative z-10">
-        <div className="text-[#E94560] mb-4 text-2xl">{icon}</div>
+        <div className="text-accent mb-4 text-2xl">{icon}</div>
 
-        <h3 className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold text-white mb-3">
+        <h3 className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold text-heading mb-3">
           {title}
         </h3>
 
-        <p className="font-[family-name:var(--font-ibm-plex-sans)] text-[#666666] leading-relaxed mb-5">
+        <p className="font-[family-name:var(--font-ibm-plex-sans)] text-muted leading-relaxed mb-5">
           {description}
         </p>
 
@@ -39,7 +39,7 @@ function ServiceCard({ title, description, tags, icon, index }: ServiceCardProps
           {tags.map((tag) => (
             <span
               key={tag}
-              className="px-2.5 py-1 text-xs font-[family-name:var(--font-jetbrains-mono)] text-white/50 bg-white/5 rounded-md"
+              className="px-2.5 py-1 text-xs font-[family-name:var(--font-jetbrains-mono)] text-tag-text bg-tag-bg rounded-md"
             >
               {tag}
             </span>

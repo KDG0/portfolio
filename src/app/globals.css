@@ -1,26 +1,150 @@
 @import "tailwindcss";
 
-@theme inline {
-  --color-deep-black: #1A1A2E;
-  --color-intense-red: #E94560;
-  --color-dark-blue: #0F3460;
-  --color-white: #FFFFFF;
-  --color-light-gray: #F5F5F5;
-  --color-medium-gray: #666666;
+/* ============================================
+   Layer 1: Raw Theme Variables
+   ============================================ */
 
+:root {
+  /* Surfaces */
+  --theme-surface: #F5F5F7;
+  --theme-surface-card: #FFFFFF;
+  --theme-surface-alt: #F0F0F2;
+  --theme-surface-nav: #FFFFFF;
+  --theme-surface-elevated: #FFFFFF;
+
+  /* Text */
+  --theme-foreground: #2D2D2D;
+  --theme-foreground-strong: #1A1A2E;
+  --theme-muted: #666666;
+  --theme-heading: #0F3460;
+
+  /* Cards */
+  --theme-card-border: #E0E0E0;
+  --theme-card-bg: rgba(255, 255, 255, 0.7);
+  --theme-card-hover-bg: rgba(0, 0, 0, 0.03);
+
+  /* Tags */
+  --theme-tag-bg: rgba(0, 0, 0, 0.05);
+  --theme-tag-text: #555555;
+
+  /* UI */
+  --theme-hamburger: #2D2D2D;
+  --theme-nav-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+
+  /* Scrollbar */
+  --theme-scrollbar-track: #F0F0F2;
+  --theme-scrollbar-thumb: #0F3460;
+
+  /* Prose */
+  --theme-prose-body: #444444;
+  --theme-prose-heading: #0F3460;
+  --theme-prose-strong: #1A1A2E;
+  --theme-prose-em: #666666;
+  --theme-prose-code-bg: rgba(0, 0, 0, 0.06);
+  --theme-prose-code-border: rgba(0, 0, 0, 0.1);
+  --theme-prose-hr: rgba(0, 0, 0, 0.1);
+  --theme-prose-pre-bg: rgba(0, 0, 0, 0.05);
+  --theme-prose-blockquote: #666666;
+
+  /* Selection */
+  --theme-selection-bg: rgba(233, 69, 96, 0.2);
+  --theme-selection-color: #1A1A2E;
+}
+
+[data-theme="dark"] {
+  /* Surfaces */
+  --theme-surface: #1A1A2E;
+  --theme-surface-card: #24243B;
+  --theme-surface-alt: #1E1E32;
+  --theme-surface-nav: #1A1A2E;
+  --theme-surface-elevated: #2E2E45;
+
+  /* Text */
+  --theme-foreground: #E0E0E0;
+  --theme-foreground-strong: #FFFFFF;
+  --theme-muted: #9CA3AF;
+  --theme-heading: #FFFFFF;
+
+  /* Cards */
+  --theme-card-border: rgba(255, 255, 255, 0.05);
+  --theme-card-bg: rgba(255, 255, 255, 0.02);
+  --theme-card-hover-bg: rgba(255, 255, 255, 0.04);
+
+  /* Tags */
+  --theme-tag-bg: rgba(255, 255, 255, 0.05);
+  --theme-tag-text: rgba(255, 255, 255, 0.5);
+
+  /* UI */
+  --theme-hamburger: #FFFFFF;
+  --theme-nav-shadow: none;
+
+  /* Scrollbar */
+  --theme-scrollbar-track: #1A1A2E;
+  --theme-scrollbar-thumb: #0F3460;
+
+  /* Prose */
+  --theme-prose-body: #cccccc;
+  --theme-prose-heading: #ffffff;
+  --theme-prose-strong: #ffffff;
+  --theme-prose-em: #999999;
+  --theme-prose-code-bg: rgba(255, 255, 255, 0.05);
+  --theme-prose-code-border: rgba(255, 255, 255, 0.1);
+  --theme-prose-hr: rgba(255, 255, 255, 0.1);
+  --theme-prose-pre-bg: rgba(0, 0, 0, 0.3);
+  --theme-prose-blockquote: #999999;
+
+  /* Selection */
+  --theme-selection-bg: rgba(233, 69, 96, 0.3);
+  --theme-selection-color: #FFFFFF;
+}
+
+/* ============================================
+   Layer 2: Tailwind Token Mapping
+   ============================================ */
+
+@theme inline {
   --font-heading: var(--font-space-grotesk);
   --font-body: var(--font-ibm-plex-sans);
   --font-mono: var(--font-jetbrains-mono);
+
+  /* Semantic color tokens */
+  --color-surface: var(--theme-surface);
+  --color-surface-card: var(--theme-surface-card);
+  --color-surface-alt: var(--theme-surface-alt);
+  --color-surface-nav: var(--theme-surface-nav);
+  --color-surface-elevated: var(--theme-surface-elevated);
+  --color-foreground: var(--theme-foreground);
+  --color-foreground-strong: var(--theme-foreground-strong);
+  --color-muted: var(--theme-muted);
+  --color-heading: var(--theme-heading);
+  --color-card-border: var(--theme-card-border);
+  --color-card-bg: var(--theme-card-bg);
+  --color-card-hover-bg: var(--theme-card-hover-bg);
+  --color-tag-bg: var(--theme-tag-bg);
+  --color-tag-text: var(--theme-tag-text);
+  --color-accent: #E94560;
+  --color-trust: #0F3460;
+  --color-hamburger: var(--theme-hamburger);
 }
+
+/* ============================================
+   Base Styles
+   ============================================ */
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background: #1A1A2E;
-  color: #FFFFFF;
+  background: var(--theme-surface);
+  color: var(--theme-foreground);
   font-family: var(--font-body), system-ui, sans-serif;
+}
+
+/* Smooth theme transitions — applied after mount to prevent flash on initial load */
+body.theme-ready,
+body.theme-ready * {
+  transition: background-color 0.3s ease, color 0.2s ease, border-color 0.3s ease;
 }
 
 /* Scrollbar styling */
@@ -29,11 +153,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1A1A2E;
+  background: var(--theme-scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0F3460;
+  background: var(--theme-scrollbar-thumb);
   border-radius: 4px;
 }
 
@@ -43,21 +167,21 @@ body {
 
 /* Selection styling */
 ::selection {
-  background: rgba(233, 69, 96, 0.3);
-  color: #FFFFFF;
+  background: var(--theme-selection-bg);
+  color: var(--theme-selection-color);
 }
 
 /* Blog prose styling */
 .prose-blog {
   font-family: var(--font-body), system-ui, sans-serif;
-  color: #cccccc;
+  color: var(--theme-prose-body);
   line-height: 1.8;
   font-size: 1.0625rem;
 }
 
 .prose-blog h2 {
   font-family: var(--font-heading), system-ui, sans-serif;
-  color: #ffffff;
+  color: var(--theme-prose-heading);
   font-size: 1.75rem;
   font-weight: 700;
   margin-top: 2.5rem;
@@ -66,7 +190,7 @@ body {
 
 .prose-blog h3 {
   font-family: var(--font-heading), system-ui, sans-serif;
-  color: #ffffff;
+  color: var(--theme-prose-heading);
   font-size: 1.25rem;
   font-weight: 600;
   margin-top: 2rem;
@@ -89,12 +213,12 @@ body {
 }
 
 .prose-blog strong {
-  color: #ffffff;
+  color: var(--theme-prose-strong);
   font-weight: 600;
 }
 
 .prose-blog em {
-  color: #999999;
+  color: var(--theme-prose-em);
 }
 
 .prose-blog ul, .prose-blog ol {
@@ -116,7 +240,7 @@ body {
 
 .prose-blog hr {
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--theme-prose-hr);
   margin: 2.5rem 0;
 }
 
@@ -124,22 +248,22 @@ body {
   border-left: 3px solid #E94560;
   padding-left: 1rem;
   margin: 1.5rem 0;
-  color: #999999;
+  color: var(--theme-prose-blockquote);
   font-style: italic;
 }
 
 .prose-blog code {
   font-family: var(--font-mono), monospace;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--theme-prose-code-bg);
+  border: 1px solid var(--theme-prose-code-border);
   border-radius: 4px;
   padding: 0.15rem 0.4rem;
   font-size: 0.875em;
 }
 
 .prose-blog pre {
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--theme-prose-pre-bg);
+  border: 1px solid var(--theme-prose-code-border);
   border-radius: 8px;
   padding: 1.25rem;
   overflow-x: auto;

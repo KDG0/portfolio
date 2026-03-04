@@ -40,7 +40,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-white/5 py-8">
+    <footer className="border-t border-card-border py-8">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Nav links */}
         <div className="flex flex-wrap justify-center gap-6 mb-6">
@@ -48,7 +48,7 @@ export default function Footer() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-[#666666] hover:text-white transition-colors font-[family-name:var(--font-ibm-plex-sans)]"
+              className="text-sm text-muted hover:text-foreground-strong transition-colors font-[family-name:var(--font-ibm-plex-sans)]"
             >
               {link.label}
             </a>
@@ -64,7 +64,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={link.label}
-              className="text-[#666666] hover:text-[#E94560] transition-colors"
+              className="text-muted hover:text-accent transition-colors"
             >
               {link.icon}
             </a>
@@ -75,17 +75,17 @@ export default function Footer() {
         <div className="text-center mb-6">
           <a
             href="mailto:kevin@guifarro.dev"
-            className="text-sm text-[#666666] hover:text-white transition-colors font-[family-name:var(--font-jetbrains-mono)]"
+            className="text-sm text-muted hover:text-foreground-strong transition-colors font-[family-name:var(--font-jetbrains-mono)]"
           >
             kevin@guifarro.dev
           </a>
         </div>
 
         {/* Copyright */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[#666666]">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted">
           <p className="font-[family-name:var(--font-ibm-plex-sans)]">
             &copy; 2026{" "}
-            <span className="font-[family-name:var(--font-jetbrains-mono)] text-white">
+            <span className="font-[family-name:var(--font-jetbrains-mono)] text-foreground-strong">
               Guifarro Dev
             </span>
           </p>

@@ -29,7 +29,15 @@
       "Bash(/c/Users/Kevin/bin/gh.exe repo create:*)",
       "Bash(git remote add:*)",
       "Bash(git branch:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "WebFetch(domain:la-mesa-dorada.vercel.app)",
+      "Bash(gh repo view:*)",
+      "Bash(gh api:*)",
+      "Bash(cygpath:*)",
+      "Bash(wc:*)",
+      "Bash(cd /c/Users/Kevin/Dev/portfolio/guifarro-dev && npm run build 2>&1)",
+      "Bash(cd /c/Users/Kevin/Dev/portfolio/guifarro-dev && git checkout main && git merge redesign/website-copy-2026 2>&1)",
+      "Bash(npm run:*)"
     ]
   }
 }

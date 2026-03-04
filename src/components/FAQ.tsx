@@ -20,19 +20,19 @@ function FAQItem({ question, answer, isOpen, onToggle, index }: FAQItemProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
-      className="border border-white/5 rounded-xl overflow-hidden"
+      className="border border-card-border rounded-xl overflow-hidden"
     >
       <button
         onClick={onToggle}
-        className="w-full flex items-center justify-between p-5 lg:p-6 text-left bg-white/[0.02] hover:bg-white/[0.04] transition-colors"
+        className="w-full flex items-center justify-between p-5 lg:p-6 text-left bg-card-bg hover:bg-card-hover-bg transition-colors"
       >
-        <span className="font-[family-name:var(--font-space-grotesk)] text-lg font-medium text-white pr-4">
+        <span className="font-[family-name:var(--font-space-grotesk)] text-lg font-medium text-heading pr-4">
           {question}
         </span>
         <motion.span
           animate={{ rotate: isOpen ? 45 : 0 }}
           transition={{ duration: 0.2 }}
-          className="text-[#E94560] text-xl flex-shrink-0"
+          className="text-accent text-xl flex-shrink-0"
         >
           +
         </motion.span>
@@ -47,7 +47,7 @@ function FAQItem({ question, answer, isOpen, onToggle, index }: FAQItemProps) {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <p className="px-5 lg:px-6 pb-5 lg:pb-6 font-[family-name:var(--font-ibm-plex-sans)] text-[#666666] leading-relaxed">
+            <p className="px-5 lg:px-6 pb-5 lg:pb-6 font-[family-name:var(--font-ibm-plex-sans)] text-muted leading-relaxed">
               {answer}
             </p>
           </motion.div>

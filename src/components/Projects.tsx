@@ -81,7 +81,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="font-[family-name:var(--font-jetbrains-mono)] text-sm text-[#E94560] tracking-wider uppercase mb-6"
+          className="font-[family-name:var(--font-jetbrains-mono)] text-sm text-accent tracking-wider uppercase mb-6"
         >
           More Work
         </motion.h3>

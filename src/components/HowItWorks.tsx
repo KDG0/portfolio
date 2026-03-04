@@ -18,20 +18,20 @@ function StepCard({ number, title, description, index }: StepProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.15 }}
-      className="group relative p-6 lg:p-8 rounded-xl border border-white/5 bg-white/[0.02] hover:border-[#E94560]/30 transition-all duration-300 hover:bg-white/[0.04]"
+      className="group relative p-6 lg:p-8 rounded-xl border border-card-border bg-card-bg hover:border-accent/30 transition-all duration-300 hover:bg-card-hover-bg"
     >
-      <div className="absolute inset-0 rounded-xl bg-[#E94560]/0 group-hover:bg-[#E94560]/[0.02] transition-all duration-300" />
+      <div className="absolute inset-0 rounded-xl bg-accent/0 group-hover:bg-accent/[0.02] transition-all duration-300" />
 
       <div className="relative z-10">
-        <span className="font-[family-name:var(--font-space-grotesk)] text-5xl font-bold text-[#E94560]/20 block mb-4">
+        <span className="font-[family-name:var(--font-space-grotesk)] text-5xl font-bold text-accent/20 block mb-4">
           {String(number).padStart(2, "0")}
         </span>
 
-        <h3 className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold text-white mb-3">
+        <h3 className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold text-heading mb-3">
           {title}
         </h3>
 
-        <p className="font-[family-name:var(--font-ibm-plex-sans)] text-[#666666] leading-relaxed">
+        <p className="font-[family-name:var(--font-ibm-plex-sans)] text-muted leading-relaxed">
           {description}
         </p>
       </div>

@@ -63,7 +63,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-[family-name:var(--font-ibm-plex-sans)] text-lg text-[#666666] leading-relaxed mb-10"
+            className="font-[family-name:var(--font-ibm-plex-sans)] text-lg text-muted leading-relaxed mb-10"
           >
             Have a question? Want to explore what AI can do for your business? I&apos;d love to hear from you.
           </motion.p>
@@ -79,16 +79,16 @@ export default function Contact() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-                className="group flex items-center gap-4 p-4 rounded-lg border border-white/5 hover:border-[#E94560]/30 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-300 w-fit min-w-[300px]"
+                className="group flex items-center gap-4 p-4 rounded-lg border border-card-border hover:border-accent/30 bg-card-bg hover:bg-card-hover-bg transition-all duration-300 w-fit min-w-[300px]"
               >
-                <span className="text-[#666666] group-hover:text-[#E94560] transition-colors">
+                <span className="text-muted group-hover:text-accent transition-colors">
                   {link.icon}
                 </span>
                 <div>
-                  <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-[#666666] uppercase tracking-wider">
+                  <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-muted uppercase tracking-wider">
                     {link.label}
                   </span>
-                  <p className="text-white text-sm group-hover:text-[#E94560] transition-colors">
+                  <p className="text-foreground text-sm group-hover:text-accent transition-colors">
                     {link.value}
                   </p>
                 </div>

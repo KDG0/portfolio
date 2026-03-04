@@ -19,26 +19,26 @@ export default function BlogCard({
   slug,
 }: BlogCardProps) {
   const cardClass =
-    "group block p-6 lg:p-8 rounded-xl border border-white/5 bg-white/[0.02] hover:border-[#E94560]/30 transition-all duration-300";
+    "group block p-6 lg:p-8 rounded-xl border border-card-border bg-card-bg hover:border-accent/30 transition-all duration-300";
 
   const content = (
     <>
       <div className="flex items-center gap-3 mb-4">
         {badge && (
-          <span className="inline-block px-2.5 py-1 text-xs font-medium font-[family-name:var(--font-jetbrains-mono)] bg-[#E94560]/10 text-[#E94560] rounded-full border border-[#E94560]/20">
+          <span className="inline-block px-2.5 py-1 text-xs font-medium font-[family-name:var(--font-jetbrains-mono)] bg-accent/10 text-accent rounded-full border border-accent/20">
             {badge}
           </span>
         )}
-        <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-[#666666]">
+        <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-muted">
           {date}
         </span>
       </div>
 
-      <h3 className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold text-white mb-3 group-hover:text-[#E94560] transition-colors">
+      <h3 className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold text-heading mb-3 group-hover:text-accent transition-colors">
         {title}
       </h3>
 
-      <p className="font-[family-name:var(--font-ibm-plex-sans)] text-[#666666] leading-relaxed">
+      <p className="font-[family-name:var(--font-ibm-plex-sans)] text-muted leading-relaxed">
         {description}
       </p>
     </>

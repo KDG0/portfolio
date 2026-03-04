@@ -41,7 +41,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <article className="max-w-3xl mx-auto px-6 lg:px-8 pt-32 pb-20">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-sm text-[#666666] hover:text-white transition-colors mb-12 font-[family-name:var(--font-ibm-plex-sans)]"
+            className="inline-flex items-center gap-2 text-sm text-muted hover:text-foreground-strong transition-colors mb-12 font-[family-name:var(--font-ibm-plex-sans)]"
           >
             <span>&larr;</span> Back to blog
           </Link>
@@ -51,12 +51,12 @@ export default async function BlogPostPage({ params }: PageProps) {
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="inline-block px-2.5 py-1 text-xs font-medium font-[family-name:var(--font-jetbrains-mono)] bg-[#E94560]/10 text-[#E94560] rounded-full border border-[#E94560]/20"
+                  className="inline-block px-2.5 py-1 text-xs font-medium font-[family-name:var(--font-jetbrains-mono)] bg-accent/10 text-accent rounded-full border border-accent/20"
                 >
                   {tag}
                 </span>
               ))}
-              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-[#666666]">
+              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-muted">
                 {new Date(post.date).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
@@ -65,7 +65,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               </span>
             </div>
 
-            <h1 className="font-[family-name:var(--font-space-grotesk)] text-3xl lg:text-5xl font-bold text-white leading-tight">
+            <h1 className="font-[family-name:var(--font-space-grotesk)] text-3xl lg:text-5xl font-bold text-heading leading-tight">
               {post.title}
             </h1>
           </header>

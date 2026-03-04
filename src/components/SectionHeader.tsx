@@ -15,7 +15,7 @@ export default function SectionHeader({ label, heading }: SectionHeaderProps) {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="font-[family-name:var(--font-jetbrains-mono)] text-sm text-[#E94560] tracking-wider uppercase"
+        className="font-[family-name:var(--font-jetbrains-mono)] text-sm text-accent tracking-wider uppercase"
       >
         {label}
       </motion.span>
@@ -24,7 +24,7 @@ export default function SectionHeader({ label, heading }: SectionHeaderProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="font-[family-name:var(--font-space-grotesk)] text-3xl lg:text-5xl font-bold text-white mt-3"
+        className="font-[family-name:var(--font-space-grotesk)] text-3xl lg:text-5xl font-bold text-heading mt-3"
       >
         {heading}
       </motion.h2>

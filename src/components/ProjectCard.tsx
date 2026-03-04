@@ -31,27 +31,27 @@ export default function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className={`group relative rounded-xl border border-white/5 bg-white/[0.02] hover:border-[#E94560]/30 transition-all duration-300 hover:bg-white/[0.04] flex flex-col ${
+      className={`group relative rounded-xl border border-card-border bg-card-bg hover:border-accent/30 transition-all duration-300 hover:bg-card-hover-bg flex flex-col ${
         isCompact ? "p-4 lg:p-5" : "p-6 lg:p-8"
       }`}
     >
       {/* Glow effect on hover */}
-      <div className="absolute inset-0 rounded-xl bg-[#E94560]/0 group-hover:bg-[#E94560]/[0.02] transition-all duration-300" />
+      <div className="absolute inset-0 rounded-xl bg-accent/0 group-hover:bg-accent/[0.02] transition-all duration-300" />
 
       <div className="relative z-10 flex flex-col flex-1">
         {badge && (
-          <span className="inline-block self-start px-2.5 py-1 text-xs font-medium font-[family-name:var(--font-jetbrains-mono)] bg-[#E94560]/10 text-[#E94560] rounded-full border border-[#E94560]/20 mb-4">
+          <span className="inline-block self-start px-2.5 py-1 text-xs font-medium font-[family-name:var(--font-jetbrains-mono)] bg-accent/10 text-accent rounded-full border border-accent/20 mb-4">
             {badge}
           </span>
         )}
 
-        <h3 className={`font-[family-name:var(--font-space-grotesk)] font-bold text-white mb-3 group-hover:text-[#E94560] transition-colors ${
+        <h3 className={`font-[family-name:var(--font-space-grotesk)] font-bold text-heading mb-3 group-hover:text-accent transition-colors ${
           isCompact ? "text-lg" : "text-xl"
         }`}>
           {title}
         </h3>
 
-        <p className={`font-[family-name:var(--font-ibm-plex-sans)] text-[#666666] leading-relaxed mb-5 flex-1 ${
+        <p className={`font-[family-name:var(--font-ibm-plex-sans)] text-muted leading-relaxed mb-5 flex-1 ${
           isCompact ? "line-clamp-2 text-sm" : ""
         }`}>
           {description}
@@ -61,7 +61,7 @@ export default function ProjectCard({
           {(isCompact ? tags.slice(0, 3) : tags).map((tag) => (
             <span
               key={tag}
-              className="px-2.5 py-1 text-xs font-[family-name:var(--font-jetbrains-mono)] text-white/50 bg-white/5 rounded-md"
+              className="px-2.5 py-1 text-xs font-[family-name:var(--font-jetbrains-mono)] text-tag-text bg-tag-bg rounded-md"
             >
               {tag}
             </span>
@@ -73,7 +73,7 @@ export default function ProjectCard({
             href={liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={`inline-flex items-center gap-2 font-[family-name:var(--font-jetbrains-mono)] text-white bg-[#E94560]/10 hover:bg-[#E94560]/20 border border-[#E94560]/30 hover:border-[#E94560]/50 rounded-lg transition-all duration-300 ${
+            className={`inline-flex items-center gap-2 font-[family-name:var(--font-jetbrains-mono)] text-accent bg-accent/10 hover:bg-accent/20 border border-accent/30 hover:border-accent/50 rounded-lg transition-all duration-300 ${
               isCompact ? "px-3 py-1.5 text-xs" : "px-4 py-2 text-sm"
             }`}
           >
@@ -88,7 +88,7 @@ export default function ProjectCard({
             href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={`inline-flex items-center gap-2 font-[family-name:var(--font-jetbrains-mono)] text-white/50 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-lg transition-all duration-300 ${
+            className={`inline-flex items-center gap-2 font-[family-name:var(--font-jetbrains-mono)] text-tag-text hover:text-foreground-strong bg-tag-bg hover:bg-card-hover-bg border border-card-border rounded-lg transition-all duration-300 ${
               isCompact ? "px-3 py-1.5 text-xs" : "px-4 py-2 text-sm"
             }`}
           >

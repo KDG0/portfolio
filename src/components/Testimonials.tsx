@@ -26,12 +26,12 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-6 rounded-xl border border-white/5 bg-white/[0.02] text-center"
+              className="p-6 rounded-xl border border-card-border bg-card-bg text-center"
             >
-              <span className="font-[family-name:var(--font-space-grotesk)] text-4xl font-bold text-[#E94560]">
+              <span className="font-[family-name:var(--font-space-grotesk)] text-4xl font-bold text-accent">
                 {metric.value}
               </span>
-              <h3 className="font-[family-name:var(--font-space-grotesk)] text-lg font-medium text-white mt-2">
+              <h3 className="font-[family-name:var(--font-space-grotesk)] text-lg font-medium text-heading mt-2">
                 {metric.label}
               </h3>
             </motion.div>

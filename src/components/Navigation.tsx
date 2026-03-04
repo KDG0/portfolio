@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { href: "#services", label: "Services" },
@@ -53,9 +54,10 @@ export default function Navigation() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#1A1A2E]/80 backdrop-blur-xl border-b border-white/5"
+          ? "bg-surface-nav/80 backdrop-blur-xl border-b border-card-border"
           : "bg-transparent"
       }`}
+      style={scrolled ? { boxShadow: "var(--theme-nav-shadow)" } : undefined}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
@@ -66,9 +68,9 @@ export default function Navigation() {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="font-[family-name:var(--font-jetbrains-mono)] text-lg font-bold text-white hover:text-[#E94560] transition-colors"
+            className="font-[family-name:var(--font-jetbrains-mono)] text-lg font-bold text-heading hover:text-accent transition-colors"
           >
-            guifarro<span className="text-[#E94560]">.</span>dev
+            guifarro<span className="text-accent">.</span>dev
           </a>
 
           {/* Desktop Nav */}
@@ -80,42 +82,46 @@ export default function Navigation() {
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={`text-sm font-medium transition-colors duration-200 ${
                   activeSection === link.href.replace("#", "")
-                    ? "text-[#E94560]"
-                    : "text-[#666666] hover:text-white"
+                    ? "text-accent"
+                    : "text-muted hover:text-foreground-strong"
                 }`}
               >
                 {link.label}
               </a>
             ))}
+            <ThemeToggle />
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, "#contact")}
-              className="ml-2 px-5 py-2.5 bg-[#E94560] text-white text-sm font-medium rounded-lg hover:bg-[#E94560]/90 transition-all duration-200 hover:shadow-lg hover:shadow-[#E94560]/25"
+              className="ml-2 px-5 py-2.5 bg-accent text-white text-sm font-medium rounded-lg hover:bg-accent/90 transition-all duration-200 hover:shadow-lg hover:shadow-accent/25"
             >
               Book a Call &rarr;
             </a>
           </div>
 
-          {/* Mobile Hamburger */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden relative w-8 h-8 flex flex-col items-center justify-center gap-1.5"
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileOpen}
-          >
-            <motion.span
-              animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-              className="w-6 h-0.5 bg-white block"
-            />
-            <motion.span
-              animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
-              className="w-6 h-0.5 bg-white block"
-            />
-            <motion.span
-              animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-              className="w-6 h-0.5 bg-white block"
-            />
-          </button>
+          {/* Mobile controls */}
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="relative w-8 h-8 flex flex-col items-center justify-center gap-1.5"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+            >
+              <motion.span
+                animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+                className="w-6 h-0.5 bg-hamburger block"
+              />
+              <motion.span
+                animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
+                className="w-6 h-0.5 bg-hamburger block"
+              />
+              <motion.span
+                animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+                className="w-6 h-0.5 bg-hamburger block"
+              />
+            </button>
+          </div>
         </div>
       </div>
 
@@ -127,7 +133,7 @@ export default function Navigation() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[#1A1A2E]/95 backdrop-blur-xl border-b border-white/5 overflow-hidden"
+            className="md:hidden bg-surface-nav/95 backdrop-blur-xl border-b border-card-border overflow-hidden"
           >
             <div className="px-6 py-4 flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -137,8 +143,8 @@ export default function Navigation() {
                   onClick={(e) => handleNavClick(e, link.href)}
                   className={`text-base font-medium transition-colors ${
                     activeSection === link.href.replace("#", "")
-                      ? "text-[#E94560]"
-                      : "text-[#666666] hover:text-white"
+                      ? "text-accent"
+                      : "text-muted hover:text-foreground-strong"
                   }`}
                 >
                   {link.label}
@@ -147,7 +153,7 @@ export default function Navigation() {
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, "#contact")}
-                className="mt-2 px-5 py-2.5 bg-[#E94560] text-white text-sm font-medium rounded-lg text-center hover:bg-[#E94560]/90 transition-all duration-200"
+                className="mt-2 px-5 py-2.5 bg-accent text-white text-sm font-medium rounded-lg text-center hover:bg-accent/90 transition-all duration-200"
               >
                 Book a Call &rarr;
               </a>

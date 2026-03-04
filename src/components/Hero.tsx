@@ -22,7 +22,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden bg-[#1A1A2E]"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
@@ -51,7 +51,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="font-[family-name:var(--font-ibm-plex-sans)] text-lg text-[#666666] leading-relaxed max-w-lg mb-8"
+              className="font-[family-name:var(--font-ibm-plex-sans)] text-lg text-[#9CA3AF] leading-relaxed max-w-lg mb-8"
             >
               I help small businesses save time and serve customers around the
               clock with custom AI chatbots, workflow automation, and modern
@@ -67,7 +67,7 @@ export default function Hero() {
             >
               <button
                 onClick={() => handleScrollTo("contact")}
-                className="px-6 py-3 bg-[#E94560] text-white font-medium rounded-lg hover:bg-[#E94560]/90 transition-all duration-200 hover:shadow-lg hover:shadow-[#E94560]/25"
+                className="px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent/90 transition-all duration-200 hover:shadow-lg hover:shadow-accent/25"
               >
                 Book a Free Strategy Call &rarr;
               </button>
@@ -95,7 +95,7 @@ export default function Hero() {
                   <span className="font-[family-name:var(--font-space-grotesk)] text-white font-bold text-lg">
                     {stat.value}
                   </span>
-                  <p className="text-[#666666] mt-0.5">{stat.label}</p>
+                  <p className="text-[#9CA3AF] mt-0.5">{stat.label}</p>
                 </div>
               ))}
             </motion.div>
@@ -118,7 +118,7 @@ export default function Hero() {
               <HeroScene />
             </Suspense>
             {/* Glow effect behind the scene */}
-            <div className="absolute inset-0 -z-10 bg-[#E94560]/5 blur-[100px] rounded-full" />
+            <div className="absolute inset-0 -z-10 bg-accent/5 blur-[100px] rounded-full" />
           </motion.div>
         </div>
       </div>

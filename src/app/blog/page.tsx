@@ -19,16 +19,16 @@ export default function BlogPage() {
         <div className="max-w-3xl mx-auto px-6 lg:px-8 pt-32 pb-20">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm text-[#666666] hover:text-white transition-colors mb-12 font-[family-name:var(--font-ibm-plex-sans)]"
+            className="inline-flex items-center gap-2 text-sm text-muted hover:text-foreground-strong transition-colors mb-12 font-[family-name:var(--font-ibm-plex-sans)]"
           >
             <span>&larr;</span> Back to home
           </Link>
 
           <div className="mb-12 lg:mb-16">
-            <span className="font-[family-name:var(--font-jetbrains-mono)] text-sm text-[#E94560] tracking-wider uppercase">
+            <span className="font-[family-name:var(--font-jetbrains-mono)] text-sm text-accent tracking-wider uppercase">
               Blog
             </span>
-            <h1 className="font-[family-name:var(--font-space-grotesk)] text-3xl lg:text-5xl font-bold text-white mt-3">
+            <h1 className="font-[family-name:var(--font-space-grotesk)] text-3xl lg:text-5xl font-bold text-heading mt-3">
               Thoughts & learnings.
             </h1>
           </div>
@@ -50,7 +50,7 @@ export default function BlogPage() {
           </div>
 
           {posts.length === 0 && (
-            <p className="text-[#666666] font-[family-name:var(--font-ibm-plex-sans)]">
+            <p className="text-muted font-[family-name:var(--font-ibm-plex-sans)]">
               No posts yet. Check back soon.
             </p>
           )}
