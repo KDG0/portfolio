@@ -27,6 +27,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: "article",
       publishedTime: post.date,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+    },
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
   };
 }
 
@@ -35,8 +43,68 @@ export default async function BlogPostPage({ params }: PageProps) {
   const post = getBlogPost(slug);
   if (!post) notFound();
 
+  const blogJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        headline: post.title,
+        description: post.description,
+        datePublished: post.date,
+        dateModified: post.date,
+        author: {
+          "@type": "Person",
+          "@id": "https://www.guifarro.dev/#person",
+          name: "Kevin Guifarro",
+          url: "https://www.guifarro.dev",
+        },
+        publisher: {
+          "@type": "Person",
+          "@id": "https://www.guifarro.dev/#person",
+          name: "Kevin Guifarro",
+          url: "https://www.guifarro.dev",
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `https://www.guifarro.dev/blog/${slug}`,
+        },
+        isPartOf: {
+          "@id": "https://www.guifarro.dev/#website",
+        },
+        keywords: post.tags.join(", "),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://www.guifarro.dev",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Blog",
+            item: "https://www.guifarro.dev/blog",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: post.title,
+            item: `https://www.guifarro.dev/blog/${slug}`,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+      />
       <main className="min-h-screen">
         <article className="max-w-3xl mx-auto px-6 lg:px-8 pt-32 pb-20">
           <Link

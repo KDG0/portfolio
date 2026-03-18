@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import SectionHeader from "./SectionHeader";
@@ -22,11 +23,12 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <img
+            <Image
               src="/images/projects/me.jpeg"
               alt="Kevin Guifarro — AI Developer based in Costa Rica"
+              width={600}
+              height={600}
               className="w-full rounded-xl border border-card-border object-cover"
-              loading="lazy"
             />
             {/* Decorative glow */}
             <div className="absolute -inset-4 -z-10 bg-accent/5 blur-[60px] rounded-full" />

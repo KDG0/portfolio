@@ -1,3 +1,4 @@
+import Link from "next/link";
 import SectionWrapper from "./SectionWrapper";
 import SectionHeader from "./SectionHeader";
 import BlogCard from "./BlogCard";
@@ -25,6 +26,15 @@ export default function Blog() {
               slug={post.slug}
             />
           ))}
+        </div>
+
+        <div className="mt-8">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 font-[family-name:var(--font-ibm-plex-sans)] text-sm text-muted hover:text-accent transition-colors"
+          >
+            View all posts <span>&rarr;</span>
+          </Link>
         </div>
       </div>
     </SectionWrapper>

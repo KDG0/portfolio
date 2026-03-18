@@ -5,9 +5,31 @@ import BlogCard from "@/components/BlogCard";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Blog | Kevin Guifarro",
+  title: "AI & Automation Blog for Small Business | Kevin Guifarro",
   description:
-    "Thoughts on software development, AI, and building things that matter.",
+    "Insights on AI chatbots, workflow automation, and building smarter small businesses. Real projects, practical advice, no jargon.",
+  alternates: {
+    canonical: "/blog",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.guifarro.dev",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Blog",
+      item: "https://www.guifarro.dev/blog",
+    },
+  ],
 };
 
 export default function BlogPage() {
@@ -15,6 +37,10 @@ export default function BlogPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <main className="min-h-screen">
         <div className="max-w-3xl mx-auto px-6 lg:px-8 pt-32 pb-20">
           <Link

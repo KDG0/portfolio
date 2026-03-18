@@ -22,39 +22,32 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Guifarro Dev | AI Chatbots, Automation & Web Development for Small Business",
+  metadataBase: new URL("https://www.guifarro.dev"),
+  title: "AI Chatbots & Automation for Small Business | Guifarro Dev",
   description:
-    "I help small businesses save time and serve customers 24/7 with custom AI chatbots, workflow automation, and modern websites. 8+ years of Fortune 500 experience.",
-  keywords: [
-    "AI chatbots",
-    "small business automation",
-    "AI developer",
-    "custom chatbot",
-    "workflow automation",
-    "web development",
-    "Next.js",
-    "Costa Rica developer",
-    "business automation",
-  ],
+    "Custom AI chatbots, workflow automation, and modern websites for small businesses. 8+ years of Fortune 500 experience. Book a free strategy call today.",
   authors: [{ name: "Kevin Guifarro" }],
   openGraph: {
-    title: "Guifarro Dev | AI Chatbots, Automation & Web Development",
+    title: "AI Chatbots & Automation for Small Business | Guifarro Dev",
     description:
-      "I help small businesses save time and serve customers 24/7 with custom AI chatbots, workflow automation, and modern websites.",
-    url: "https://guifarro.dev",
-    siteName: "guifarro.dev",
+      "Custom AI chatbots, workflow automation, and modern websites for small businesses. 8+ years of Fortune 500 experience. Book a free strategy call today.",
+    url: "https://www.guifarro.dev",
+    siteName: "Guifarro Dev",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Guifarro Dev | AI Chatbots, Automation & Web Development",
+    title: "AI Chatbots & Automation for Small Business | Guifarro Dev",
     description:
-      "I help small businesses save time and serve customers 24/7 with custom AI chatbots, workflow automation, and modern websites.",
+      "Custom AI chatbots, workflow automation, and modern websites for small businesses. 8+ years of Fortune 500 experience. Book a free strategy call today.",
   },
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 
